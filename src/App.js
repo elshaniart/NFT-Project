@@ -1,18 +1,16 @@
-import React, { Component } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 
-class App extends Component {
-  state = {
-    data: null,
-  };
+const App = () => {
+  const [state, setState] = useState({ data: null });
 
-  componentDidMount() {
-    this.callBackendAPI()
-      .then((res) => this.setState({ data: res.express }))
+  useEffect(() => {
+    callBackendAPI()
+      .then((res) => setState({ data: res.express }))
       .catch((err) => console.log(err));
-  }
-  // fetching the GET route from the Express server which matches the GET route from server.js
-  callBackendAPI = async () => {
+  }, []);
+
+  const callBackendAPI = async () => {
     const response = await fetch("/express_backend");
     const body = await response.json();
 
@@ -21,18 +19,17 @@ class App extends Component {
     }
     return body;
   };
-
-  render() {
-    return (
-      <div className="App">
-        <header>
-          <h1 className="App-title">Welcome to the NFT Project</h1>
-        </header>
-        <button>Go to next Pag</button>
-        <p className="App-intro">{this.state.data}</p>
-      </div>
-    );
-  }
-}
+  return (
+    <div className="App">
+      <header>
+        <h1 className="App-title">
+          Welcome to the NFT Project/ MyHeritage clone thingy
+        </h1>
+      </header>
+      <button>Go to next Pag</button>
+      <p className="App-intro">{state.data}</p>
+    </div>
+  );
+};
 
 export default App;
