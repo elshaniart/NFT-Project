@@ -10,10 +10,10 @@ Need npm, node, react, express installed atleast to begin
 Step one git clone this project onto your local device
 
 
-Step two run npm install to download dependencies
+Step two cd into project & run npm install to download dependencies
 
 
-npm start to get the front-end going
+npm start to get the front-end going 
 
 
 node server.js to get the express backend (boiler plate rn)
