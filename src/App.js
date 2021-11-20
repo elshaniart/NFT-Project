@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import MainMenu from "./components/MainMenu/MainMenu";
 import "./App.css";
 
 const App = () => {
@@ -20,15 +21,9 @@ const App = () => {
     return body;
   };
   return (
-    <div className="App">
-      <header>
-        <h1 className="App-title">
-          Welcome to the NFT Project/ MyHeritage clone thingy
-        </h1>
-      </header>
-      <button>Go to next Pag</button>
-      <p className="App-intro">{state.data}</p>
-    </div>
+    <>
+      <MainMenu />
+    </>
   );
 };
 
