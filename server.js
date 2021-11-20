@@ -7,6 +7,6 @@ app.listen(port, () => console.log(`Listening on port ${port}`))
 
 
 
-app.get('/express_backend', (req, res) =>{
+app.get('/*', (req, res) =>{
     res.send({ express:  'YOUR EXPRESS BACKEND IS CONNECT TO REACT'})
 })
